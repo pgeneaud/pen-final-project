@@ -2,7 +2,7 @@
 This code is adapted from the code of Michael Cutler (http://cutler.io/2012/07/hadoop-processing-zip-files-in-mapreduce/). It's a wordcount, but with zip files and other utils that will help us automatize its performance.
 
 # Repository setup
-`git clone --recurse-submodules https://gitlab.aliens-lyon.fr/mroget/hadoop-zip`
+`git clone --recurse-submodules https://github.com/osmarcedron/pen-final-project
 
 # How to use it
 0. Ensure that you have a correct working bullet-proof hadoop environment, i.e. `hadoop`, `hdfs` commands work properly.
