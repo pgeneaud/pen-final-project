@@ -20,3 +20,7 @@ cleanhdfs:
 
 clean:
 	rm -f *.class
+
+cleanzip:
+	rm -f pen-dataset/zip/*.zip
+
