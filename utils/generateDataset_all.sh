@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -a SIZES=("128K" "256K" "512K" "1M" "2M")
+declare -a SIZES=("128K" "256" "512" "1M" "2M")
 
 for SPLITSIZE in "${SIZES[@]}"
 do
