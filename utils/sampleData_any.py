@@ -6,7 +6,7 @@ import subprocess
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("size", metavar="size", type = str, help = 'the split size')
+parser.add_argument("split_size", metavar="split_size", type = str, help = 'the split size')
 parser.add_argument("compression_ratio", metavar="com", type = int, help = 'the compression ratio')
 args = parser.parse_args()
 
@@ -71,4 +71,4 @@ def sample(filespath):
         print(s, end = '') #
     print('\r' + ' ' * barlength + '\r', end = '') #
 
-sample("./pen-dataset/zip_{}_{}".format(args.size, args.compression_ratio))
+sample("./pen-dataset/zip_{}_{}".format(args.split_size, args.compression_ratio))
