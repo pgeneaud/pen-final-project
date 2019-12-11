@@ -1,11 +1,11 @@
 #!/bin/sh
 
-DATA_PATH="$1/../pen-dataset/original"
-UNZIP="$1/../pen-dataset/unzip"
-SPLIT="$1/../pen-dataset/split"
-ZIP="$1/../pen-dataset/zip"
-SPLITSIZE="$2"
-COMPRESSION_RATIO=$3
+DATA_PATH="./pen-dataset/original"
+UNZIP="./pen-dataset/unzip"
+SPLIT="./pen-dataset/split"
+ZIP="./pen-dataset/zip"
+SPLITSIZE="$1"
+COMPRESSION_RATIO=$2
 # UNZIP ORIGINAL DATA
 gunzip -k "$DATA_PATH"/*
 mv "$DATA_PATH"/*.txt $UNZIP
