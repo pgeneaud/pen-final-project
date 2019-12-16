@@ -1,19 +1,20 @@
 import os
-#import random
-#import time
-#import glob
+import random
+import time
+import glob
 import subprocess
-#import argparse
+
+import sampleData
 
 split_sizes = ["128K", "256K", "512K", "1M", "2M"]
 compression_ratios = range(1, 10)
 genpath = "./utils/generateDataset.sh"
-sampler = "./sampleData.py"
+sampler = "./utils/sampleData.py"
 
 
-def generateDataset(splitsize, comp_ratio):
-    print ("Generating the dataset with split size {} and {}...".format(splitsize, comp_ratio))
-    subprocess.call(['sh', genpath, splitsize, str(comp_ratio)])
+def generateDataset(split_size, comp_ratio):
+    print ("Generating the dataset with split size {} and {}...".format(split_size, comp_ratio))
+    subprocess.call(['sh', genpath, split_size, str(comp_ratio)])
 
 
 #TODO: implement a parser for the results
@@ -21,16 +22,16 @@ def generateDataset(splitsize, comp_ratio):
 
 def removeZipFiles():
     print ("Removing zip files...")
-    subprocess.call(['rm', dir_path+"/../pen-dataset/zip/*"])
+    subprocess.call(['rm', "./pen-dataset/zip/*"])
 
 
 def main():
-    for splitsize in split_sizes:
+    for split_size in split_sizes:
         for comp_ratio in compression_ratios:
-            generateDataset(splitsize, compratio)
-            execfile(sampler)
+            generateDataset(split_size, comp_ratio)
+            sampleData.sample("./pen-dataset/zip")
+            subprocess.call(['hdfs', 'dfs', '-rm', '/input/*'])
             removeZipFiles()
-
 
 main()
 

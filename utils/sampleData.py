@@ -65,4 +65,5 @@ def sample(filespath):
         print(s, end = '') #
     print('\r' + ' ' * barlength + '\r', end = '') #
 
-sample("./pen-dataset/zip");
+# sample("./pen-dataset/zip")
+
